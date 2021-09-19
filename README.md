@@ -13,6 +13,9 @@ Q: Why do I hear nothing?
 
 A: You may need to turn up the sound
 
+Q: What am I listening to?
+
+A: CPU usage percentage on your left ear, memory usage percentage on your right ear and a metronome with the disk space usage
 
 ## Summary
 
