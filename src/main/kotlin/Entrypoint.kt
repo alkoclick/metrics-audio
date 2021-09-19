@@ -1,4 +1,5 @@
 import audio.AudioPlayer
+import audio.Synthesizer
 
 object Entrypoint {
 
@@ -7,6 +8,7 @@ object Entrypoint {
 
         AudioPlayer(Config.load()).play()
 
-        Thread.sleep(60000)
+        Thread.sleep(60_000)
+        Synthesizer.cleanup() // Needs this call if running
     }
 }
