@@ -7,7 +7,7 @@ import javax.sound.midi.MidiChannel
 import javax.sound.midi.MidiSystem
 import kotlin.math.roundToInt
 
-internal object MidiPlayer {
+internal object Metronome {
     private val mChannels: Array<MidiChannel>
 
     init {

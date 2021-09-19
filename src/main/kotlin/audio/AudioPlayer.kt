@@ -32,7 +32,7 @@ class AudioPlayer(private val config: Config) {
             AudioType.METRO -> {
                 val bpm = resultToBpm(soundQuery, result, config.metronome).toLong()
                 if (bpm > 0)
-                    MidiPlayer.repeatNote(
+                    Metronome.repeatNote(
                         channel = nameToChannel(soundQuery),
                         note = 50,
                         velocity = resultToPercent(soundQuery, result) * 100,
