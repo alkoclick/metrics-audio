@@ -1,0 +1,35 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'io.wusa.semver-git-plugin' version '2.3.7'
+    id 'application'
+}
+
+group 'com.github.alkoclick'
+
+semver {
+    branches {
+        branch {
+            incrementer = "PATCH_INCREMENTER"
+            regex = ".*"
+            formatter = { "${semver.info.version.major}.${semver.info.version.minor}.${semver.info.version.patch}.${semver.info.shortCommit}" }
+        }
+    }
+}
+version = semver.info.toString()
+
+repositories {
+    mavenCentral()
+    maven { url "https://clojars.org/repo" }
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.10"
+
+    implementation 'com.jsyn:jsyn:20170815'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.12.5"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.5"
+}
+
+mainClassName = 'Entrypoint'

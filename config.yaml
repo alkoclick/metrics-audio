@@ -1,0 +1,23 @@
+name: prom-node-exporter
+version: 0.1
+synthesizer:
+  freqUpper: 450
+  freqLower: 200
+metronome:
+  bpmMin: 0
+  bpmMax: 300
+prometheus:
+  port: 9090
+  scheme: http
+  url: 0.0.0.0
+audioQueries:
+  - name: cpu
+    query: rate(process_cpu_seconds_total[1m])
+    type: SYNTH
+    min: 0
+    max: 1
+  - name: procsRunning
+    query: go_threads
+    type: METRO
+    min: 0
+    max: 100
